@@ -22,7 +22,6 @@ void citire_players(Player *players, int nr_players, FILE *fisier1) {
         players[i].puncte = puncte; //salvarea punctajului jucatorului
     }
 }
-
 // Funcție pentru calcularea punctajului unei echipe
 float calcul_punctaj_echipa(Team *team) {
     int total_points = 0;
