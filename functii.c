@@ -1,5 +1,5 @@
 #include "functii.h"
-
+//task1
 // Funcție pentru citirea jucătorilor
 void citire_players(Player *players, int nr_players, FILE *fisier1) {
     char firstnm[50], secnm[50];
@@ -13,34 +13,6 @@ void citire_players(Player *players, int nr_players, FILE *fisier1) {
         players[i].puncte = puncte; //salvarea punctajului jucatorului
     }
 }
-// Funcție pentru calcularea punctajului unei echipe
-float calcul_punctaj_echipa(Team *team) {
-    int total_points = 0;
-    for (int i = 0; i < team->nr_players; i++) {
-        total_points += team->players[i].puncte;
-    }
-    return (float)total_points / team->nr_players; //media punctajului
-}
-
-// Funcție pentru verificarea dacă un număr este putere a lui 2
-int este_putere_a_lui_2(int n) {
-    return (n > 0) && !(n & (n - 1));
-}
-
-// Funcție pentru ștergerea jucătorilor dintr-o echipă
-void sterge_jucatori(Team *team) {
-    if (team == NULL || team->players == NULL) {
-        return;
-    }
-    for (int i = 0; i < team->nr_players; i++) {
-        free(team->players[i].nume); //eliberare mem
-        free(team->players[i].prenume);
-    }
-    free(team->players);
-    team->players = NULL;
-    team->nr_players = 0; //eliberam memoria si resetam nr de jucatori ai echipei
-}
-
 // Funcție pentru citirea echipelor
 void citire_echipe(Team **head, char *nume_team, int nr_players, FILE *fisier1) {
    
@@ -76,6 +48,34 @@ void afisare(Team *head, int nr_echipe, FILE *fisier2) {
         fprintf(fisier2, "%s\r\n", head->nume_team);
         head = head->next;
     }
+}
+//task2
+// Funcție pentru calcularea punctajului unei echipe
+float calcul_punctaj_echipa(Team *team) {
+    int total_points = 0;
+    for (int i = 0; i < team->nr_players; i++) {
+        total_points += team->players[i].puncte;
+    }
+    return (float)total_points / team->nr_players; //media punctajului
+}
+
+// Funcție pentru verificarea dacă un număr este putere a lui 2
+int este_putere_a_lui_2(int n) {
+    return (n > 0) && !(n & (n - 1));
+}
+
+// Funcție pentru ștergerea jucătorilor dintr-o echipă
+void sterge_jucatori(Team *team) {
+    if (team == NULL || team->players == NULL) {
+        return;
+    }
+    for (int i = 0; i < team->nr_players; i++) {
+        free(team->players[i].nume); //eliberare mem
+        free(team->players[i].prenume);
+    }
+    free(team->players);
+    team->players = NULL;
+    team->nr_players = 0; //eliberam memoria si resetam nr de jucatori ai echipei
 }
 
 
