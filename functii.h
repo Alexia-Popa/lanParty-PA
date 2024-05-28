@@ -18,11 +18,13 @@ struct team {
     float points;
     struct team *next;
 };typedef struct team Team;
+
 typedef struct Node {
     Team *team1;
     Team *team2;
     struct Node *next;
 } Node;
+
 typedef struct Queue {
     Node *front;
     Node *rear;
