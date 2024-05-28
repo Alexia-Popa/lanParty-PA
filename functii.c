@@ -1,13 +1,4 @@
 #include "functii.h"
-// Funcție pentru alocarea memoriei
-void* allocate_memory(size_t size) {
-    void* ptr = malloc(size);
-    if (ptr == NULL) {
-        printf("Alocare esuata!\n");
-        exit(1);
-    }
-    return ptr;
-}
 
 // Funcție pentru citirea jucătorilor
 void citire_players(Player *players, int nr_players, FILE *fisier1) {
