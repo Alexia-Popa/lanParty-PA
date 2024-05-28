@@ -1,7 +1,6 @@
 #include "functii.h"
 
 #define TASKS 5
-
 int main(int argc, char *argv[]) {
     Team *head = NULL;
     int *task;
